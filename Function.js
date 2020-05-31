@@ -79,8 +79,8 @@ var contacts = [
 //   }
 //   console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
 
-// SECTION ---------------------------------------------------------------------------------------------------//
-
+// SECTION  ---------------------------------------------------------------------------------------------------//
+// NOTE 
 let array = [
   { id: 1, monto: 1000, mes: 'Enero' },
   { id: 2, monto: 2000, mes: 'Febrero' },
@@ -89,6 +89,18 @@ let array = [
   { id: 5, monto: 2900, mes: 'Diciembre' },
   { id: 6, monto: 4500, mes: 'Noviembre' }
 ]
+
+let amounts = [];
+array.map((item ,i ) => {
+  console.log(item.monto);
+  amounts.push(item.monto);
+});
+console.log(amounts);
+let total = amounts.reduce((a,b) => {
+  return a + b;
+},0)
+
+console.log(`El total de la suma de montos del array es ${total}`);
 
 // SECTION ---------------------------------------------------------------------------------------------------//
 

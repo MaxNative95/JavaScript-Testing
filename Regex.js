@@ -148,5 +148,224 @@
 // console.log(result)
 
 //SECTION ---------------------------------------------------------------------------------------------------//
-// TODO EXAM 
+//In an earlier challenge, you used the caret character (^) inside a character set to create a negated character set 
+//in the form [^thingsThatWillNotBeMatched]. Outside of a character set, the caret is used to search for patterns at the beginning of strings
 
+// let firstString = "Ricky is first and can be found.";
+// let firstRegex = /^Ricky/;
+// firstRegex.test(firstString);
+// // Returns true
+// let notFirst = "You can't find Ricky now.";
+// firstRegex.test(notFirst);
+// // Returns false
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//You can search the end of strings using the dollar sign character $ at the end of the regex
+
+// let theEnding = "This is a never ending story";
+// let storyRegex = /story$/;
+// storyRegex.test(theEnding);
+// // Returns true
+// let noEnding = "Sometimes a story will have to end";
+// storyRegex.test(noEnding);
+// // Returns false
+
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//Match all letters and numbers with w
+//These shortcut character classes are also known as shorthand character classes
+
+// let longHand = /[A-Za-z0-9_]+/;
+// let shortHand = /\w+/;
+// let numbers = "42";
+// let varNames = "important_var";
+// longHand.test(numbers); // Returns true
+// shortHand.test(numbers); // Returns true
+// longHand.test(varNames); // Returns true
+// shortHand.test(varNames); // Returns true
+
+
+// let alphaNumeric = "The 0ld town road h4as b33n hard";
+// let regEx = /[\w+]/g;
+// let res = alphaNumeric.match(regEx).length
+// console.log(`The total of alphanumeric items is ${res}`);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+// shortcut word W is the opposite of the lowercase letter w, it matches what is not alphanumeric 
+
+// let shortHand = /\W/g;
+// let numbers = "42%";
+// let sentence = "Coding!";
+// console.log(numbers.match(shortHand)); // Returns ["%"]
+// console.log(sentence.match(shortHand)); // Returns ["!"]
+
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+// shortcut for match all numbers. The shortcut to look for digit characters is \d, with a lowercase d. 
+//This is equal to the character class [0-9], which looks for a single character of any number between zero and nine.
+
+// let movieName = "2001: A Space Odyssey";
+// let numRegex = /\d/g; 
+// let result = movieName.match(numRegex).length;
+// console.log(result);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//Match all no numbers. The shortcut to look for non-digit characters is \D. 
+//This is equal to the character class [^0-9], which looks for a single character that is not a number between zero and nine.
+
+// let movieName = "2001: A Space Odyssey";
+// let noNumRegex = /\D/g; 
+// let result = movieName.match(noNumRegex).length;
+// console.log(result);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//Regular Expresion to test for usernames
+// let username = "AA";
+// let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i;
+// let result = userCheck.test(username);
+// console.log(result); // returns true if 
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//You can search for whitespace using \s, which is a lowercase s
+
+// let whiteSpace = "Whitespace. Whitespace everywhere!"
+// let spaceRegex = /\s/g;
+// whiteSpace.match(spaceRegex);
+// // Returns [" ", " "]
+
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+// You can also search for everything except whitespace
+
+// let sample = "Whitespace is important in separating words";
+// let countNonWhiteSpace = /\S/g; // Change this line
+// let result = sample.match(countNonWhiteSpace);
+// console.log(result);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//You can specify the lower and upper number of patterns with quantity specifiers. Quantity specifiers are used with curly brackets ({ and })
+
+// let A4 = "aaaah";
+// let A2 = "aah";
+// let multipleA = /a{3,5}h/;
+// console.log(multipleA.test(A4)); // Returns true
+// console.log(multipleA.test(A2)); // Returns false
+
+
+// let ohStr = "Ohhhhhhh no";
+// let ohRegex = /Oh{2,5}\S no/; // Change this line
+// let result = ohRegex.test(ohStr);
+
+// console.log(result);
+
+//We can also use this pattern to specify a no upper limit, like so 
+// let A4 = "haaaah";
+// let A2 = "haah";
+// let A100 = "h" + "a".repeat(100) + "h";
+// let multipleA = /ha{3,}h/;
+// multipleA.test(A4); // Returns true
+// multipleA.test(A2); // Returns false
+// multipleA.test(A100); // Returns true
+
+// let haStr = "Hazzzzah";
+// let haRegex = /Haz{4,}ah/;
+// let result = haRegex.test(haStr);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//Sometimes you only want a specific number of matches
+
+// let A4 = "haaaah";
+// let A3 = "haaah";
+// let A100 = "h" + "a".repeat(100) + "h";
+// let multipleHA = /ha{3}h/;
+// multipleHA.test(A4); // Returns false
+// multipleHA.test(A3); // Returns true
+// multipleHA.test(A100); // Returns false
+
+// let timStr = "Timmmmber";
+// let timRegex = /Tim{4}ber/; 
+// let result = timRegex.test(timStr);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//You can specify the possible existence of an element with a question mark, ?. This checks for zero or one of the preceding element. 
+//You can think of this symbol as saying the previous element is optional.
+
+// let american = "color";
+// let british = "colour";
+// let rainbowRegex= /colou?r/;
+// rainbowRegex.test(american); // Returns true
+// rainbowRegex.test(british); // Returns true
+
+// let favWord = "favorite";
+// let favRegex = /favou?rite/; // Change this line
+// let result = favRegex.test(favWord);
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//Positive and Negative Lookahead
+//Positive (?=...)
+//Negative (?!...)
+
+// Los lookaheads son patrones que le dicen a JavaScript que mire hacia adelante en su cadena para buscar patrones más adelante.
+// Esto puede ser útil cuando desea buscar múltiples patrones en la misma cadena.
+// Hay dos tipos de lookaheads: lookahead positivo y lookahead negativo.
+// Una búsqueda anticipada positiva buscará asegurarse de que el elemento en el patrón de búsqueda esté allí, 
+// pero en realidad no coincidirá.Se utiliza una búsqueda anticipada positiva como(? = ...) donde ...es la parte requerida que no coincide.
+// Por otro lado, una búsqueda anticipada negativa buscará asegurarse de que el elemento en el patrón de búsqueda no esté allí.
+// Se usa un lookahead negativo como(?! ...) donde el ...es el patrón en el que no desea estar allí.
+// El resto del patrón se devuelve si la parte negativa anticipada no está presente.
+// Los lookaheads son un poco confusos, pero algunos ejemplos ayudarán.
+
+
+// let quit = "qu";
+// let noquit = "qt";
+// let quRegex = /q(?=u)/;
+// let qRegex = /q(?!u)/;
+// console.log(quit.match(quRegex)); // Returns ["q"]
+// console.log(noquit.match(qRegex)); // Returns ["q"]
+
+
+//A more practical use of lookaheads is to check two or more patterns in one string. 
+//Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+
+// let password = "abc123";
+// let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+// checkPass.test(password); // Returns 
+
+//Another use case for passwords
+// let sampleWord = "astronaut";
+// let pwRegex = /^\D(?=\w{5})(?=\w*\d{2})/g; 
+// let result = pwRegex.test(sampleWord);
+
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//Check For Mixed Grouping of Characters
+
+// let testStr = "Pumpkin";
+// let testRegex = /P(engu|umpk)in/;
+// testRegex.test(testStr);
+// Returns true
+
+// let myString = "Eleanor Roosevelt";
+// let myRegex = /(Franlkin|Eleanor).*Roosevelt/; // Change this line
+// console.log(myRegex.test(myString)); // Change this line
+
+// After passing the challenge experiment with myString and see how the grouping works
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//You can also use a regex with the replace method like so
+
+// let wrongText = "The sky is silver.";
+// let silverRegex = /silver/;
+// wrongText.replace(silverRegex, "blue");
+// // Returns "The sky is blue."
+
+// //You can also access capture groups in the replacement string with dollar signs ($)
+// let res = "one two three".replace(/(\w+)\s(\w+)\s(\w+)/, '$3 $2 $1');
+// console.log(res);
+// Returns "Camp Code"
+
+//SECTION ---------------------------------------------------------------------------------------------------//
+//How to remove spaces from the beggining and the end of the string
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // Change this line
+let result = hello.replace(wsRegex, ""); // Change this line
