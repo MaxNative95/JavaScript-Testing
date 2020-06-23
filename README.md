@@ -1,2 +1,2 @@
 # JavaScript-Testing
-A compilation of JavaScript files to make tests
+A compilation of JavaScript files to make coding tests
