@@ -123,33 +123,110 @@ fruits.indexOf('pears'); // returns 1, the first index at which the element exis
 function greaterThanTen(arr) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > 10) {
-        newArr.push(arr[i]);
-      }
+        if (arr[i] > 10) {
+            newArr.push(arr[i]);
+        }
     }
     return newArr;
-  }
-  
-  // SECTION ---------------------------------------------------------------------------------------------------------------//
+}
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
 
 
-  greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
-  // returns [12, 14, 80]
+greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
+// returns [12, 14, 80]
 
-  function filteredArray(arr, elem) {
+function filteredArray(arr, elem) {
     let newArr = [];
-    // Only change code below this line
-    for(let i=0; i<arr.length; i++){
-      if(arr[i].indexOf(elem) === -1){
-        newArr.push(arr[i])
-      }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].indexOf(elem) === -1) {
+            newArr.push(arr[i])
+        }
     }
-    // Only change code above this line
+
     return newArr;
+}
+
+// /console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
+//NOTE OBJECTS
+
+// Access Property Names with Bracket Notation
+let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+
+    return foods[scannedItem]
+
+}
+
+//console.log(checkInventory("apples"));
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
+
+//Use the delete Keyword to Remove Object Properties
+
+let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+};
+
+
+delete foods.oranges
+delete foods.plums
+delete foods.strawberries
+
+console.log(foods);
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
+
+//Check if an Object has a Property
+//JavaScript provides us with two different ways to do this. One uses the hasOwnProperty() method and the other uses the in keyword.
+
+users.hasOwnProperty('Alan');
+'Alan' in users;
+// both return true
+
+let users = {
+    Alan: {
+      age: 27,
+      online: true
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: true
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+  };
+  
+  function isEveryoneHere(obj) {
+    // Only change code below this line
+    if('Alan' in obj && 'Jeff' in obj && 'Sarah' in obj && 'Ryan' in obj){
+      return true
+    }
+    return false
+    // Only change code above this line
   }
   
-  console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+  console.log(isEveryoneHere(users));
   
-   // SECTION ---------------------------------------------------------------------------------------------------------------//
-
-   
