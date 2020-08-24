@@ -13,7 +13,14 @@
             "suppressTaskName": true,
             "showOutput": "always",
             "problemMatcher": "$jshint",
-            "args": ["${file}"]
+            "args": [
+                "${file}"
+            ],
+            "label": "runFile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

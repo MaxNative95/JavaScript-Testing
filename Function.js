@@ -81,26 +81,24 @@ var contacts = [
 
 // SECTION  ---------------------------------------------------------------------------------------------------//
 // NOTE 
-let array = [
-  { id: 1, monto: 1000, mes: 'Enero' },
-  { id: 2, monto: 2000, mes: 'Febrero' },
-  { id: 3, monto: 2200, mes: 'Abril' },
-  { id: 4, monto: 9000, mes: 'Junio' },
-  { id: 5, monto: 2900, mes: 'Diciembre' },
-  { id: 6, monto: 4500, mes: 'Noviembre' }
-]
+// let array = [
+//   { id: 1, monto: 1000, mes: 'Enero' },
+//   { id: 2, monto: 2000, mes: 'Febrero' },
+//   { id: 3, monto: 2200, mes: 'Abril' },
+//   { id: 4, monto: 9000, mes: 'Junio' },
+//   { id: 5, monto: 2900, mes: 'Diciembre' },
+//   { id: 6, monto: 4500, mes: 'Noviembre' }
+// ]
 
-let amounts = [];
-array.map((item ,i ) => {
-  console.log(item.monto);
-  amounts.push(item.monto);
-});
-console.log(amounts);
-let total = amounts.reduce((a,b) => {
-  return a + b;
-},0)
+// let amounts = [];
+// array.map((item, i) => {
+//   console.log(item.monto);
+//   amounts.push(item.monto);
+// });
+// console.log(amounts);
+// let total = amounts.reduce((a, b) => a + b);
 
-console.log(`El total de la suma de montos del array es ${total}`);
+// console.log(`El total de la suma de montos del array es ${total}`);
 
 // SECTION ---------------------------------------------------------------------------------------------------//
 
@@ -234,3 +232,6 @@ console.log(`El total de la suma de montos del array es ${total}`);
 // }
 
 // ordenarNumeros(5, 4, 6, 1, 3);
+
+
+let letters = 'AlL THe leTTerS arE BaD, PleaSE HELP me'

@@ -130,11 +130,13 @@ function greaterThanTen(arr) {
     return newArr;
 }
 
-// SECTION ---------------------------------------------------------------------------------------------------------------//
+
 
 
 greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
 // returns [12, 14, 80]
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
 
 function filteredArray(arr, elem) {
     let newArr = [];
@@ -175,58 +177,76 @@ function checkInventory(scannedItem) {
 
 //Use the delete Keyword to Remove Object Properties
 
-let foods = {
-    apples: 25,
-    oranges: 32,
-    plums: 28,
-    bananas: 13,
-    grapes: 35,
-    strawberries: 27
-};
+// let foods = {
+//     apples: 25,
+//     oranges: 32,
+//     plums: 28,
+//     bananas: 13,
+//     grapes: 35,
+//     strawberries: 27
+// };
 
 
-delete foods.oranges
-delete foods.plums
-delete foods.strawberries
+// delete foods.oranges
+// delete foods.plums
+// delete foods.strawberries
 
-console.log(foods);
+//console.log(foods);
 
 // SECTION ---------------------------------------------------------------------------------------------------------------//
 
 //Check if an Object has a Property
 //JavaScript provides us with two different ways to do this. One uses the hasOwnProperty() method and the other uses the in keyword.
 
-users.hasOwnProperty('Alan');
-'Alan' in users;
-// both return true
+// users.hasOwnProperty('Alan');
+// 'Alan' in users;
+//  both return true
 
-let users = {
-    Alan: {
-      age: 27,
-      online: true
-    },
-    Jeff: {
-      age: 32,
-      online: true
-    },
-    Sarah: {
-      age: 48,
-      online: true
-    },
-    Ryan: {
-      age: 19,
-      online: true
-    }
-  };
-  
-  function isEveryoneHere(obj) {
+// let users = {
+//     Alan: {
+//         age: 27,
+//         online: true
+//     },
+//     Jeff: {
+//         age: 32,
+//         online: true
+//     },
+//     Sarah: {
+//         age: 48,
+//         online: true
+//     },
+//     Ryan: {
+//         age: 19,
+//         online: true
+//     }
+// };
+
+function isEveryoneHere(obj) {
     // Only change code below this line
-    if('Alan' in obj && 'Jeff' in obj && 'Sarah' in obj && 'Ryan' in obj){
-      return true
+    if ('Alan' in obj && 'Jeff' in obj && 'Sarah' in obj && 'Ryan' in obj) {
+        return true
     }
     return false
     // Only change code above this line
-  }
-  
-  console.log(isEveryoneHere(users));
-  
+}
+
+//console.log(isEveryoneHere(users));
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
+
+function countOnline(usersObj) {
+    // Only change code below this line
+    let usersOnline = []
+    for (let user in usersObj) {
+        if (usersObj[user].online === true) {
+            usersOnline.push(usersObj[user])
+        }
+        
+        return console.log(usersOnline.length)
+    }
+    // Only change code above this line
+}
+let obj = { Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }
+
+countOnline(obj);
+
