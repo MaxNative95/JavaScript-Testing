@@ -235,3 +235,15 @@ var contacts = [
 
 
 let letters = 'AlL THe leTTerS arE BaD, PleaSE HELP me'
+
+
+// SECTION ---------------------------------------------------------------------------------------------------//
+
+const getUsuarioActivo = (nombre) => ({
+  uid: '12388123',
+  username: nombre
+})
+
+const usuarioActivo = getUsuarioActivo('MaxPapi');
+console.log(usuarioActivo);
+

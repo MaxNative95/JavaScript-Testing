@@ -234,19 +234,56 @@ function isEveryoneHere(obj) {
 
 // SECTION ---------------------------------------------------------------------------------------------------------------//
 
-function countOnline(usersObj) {
-    // Only change code below this line
-    let usersOnline = []
-    for (let user in usersObj) {
-        if (usersObj[user].online === true) {
-            usersOnline.push(usersObj[user])
-        }
-        
-        return console.log(usersOnline.length)
-    }
-    // Only change code above this line
-}
-let obj = { Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }
+// function countOnline(usersObj) {
+//     // Only change code below this line
+//     let usersOnline = []
+//     for (let user in usersObj) {
+//         if (usersObj[user].online === true) {
+//             usersOnline.push(usersObj[user])
+//         }
 
-countOnline(obj);
+//         return console.log(usersOnline.length)
+//     }
+//     // Only change code above this line
+// }
+// let obj = { Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }
 
+// countOnline(obj);
+
+
+// SECTION ---------------------------------------------------------------------------------------------------------------//
+const heroes = [
+    {
+        id: 1,
+        name: 'Batman',
+        owner: 'DC'
+    },
+    {
+        id: 2,
+        name: 'Spiderman',
+        owner: 'Marvel'
+    },
+    {
+        id: 3,
+        name: 'Superman',
+        owner: 'DC'
+    },
+    {
+        id: 4,
+        name: 'Flash',
+        owner: 'DC'
+    },
+    {
+        id: 5,
+        name: 'Wolverine',
+        owner: 'Marvel'
+    },
+];
+
+const getHeroeById = id => heroes.find(element => element.id === id)
+
+console.log(getHeroeById(4));
+
+const getHeroeByOwner = owner => heroes.filter(element => element.owner === owner)
+
+console.log(getHeroeByOwner('DC'));
