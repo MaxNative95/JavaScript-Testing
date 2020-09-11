@@ -234,21 +234,31 @@ function isEveryoneHere(obj) {
 
 // SECTION ---------------------------------------------------------------------------------------------------------------//
 
-// function countOnline(usersObj) {
-//     // Only change code below this line
-//     let usersOnline = []
-//     for (let user in usersObj) {
-//         if (usersObj[user].online === true) {
-//             usersOnline.push(usersObj[user])
-//         }
+let obj = {
+    Alan: {
+        online: true
+    },
+    Jeff: {
+        online: false
+    },
+    Sarah: {
+        online: true
+    }
+}
 
-//         return console.log(usersOnline.length)
-//     }
-//     // Only change code above this line
-// }
-// let obj = { Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }
+function countOnline(usersObj) {
+    // Only change code below this line
+    let verdaderos = []
+    for (let user in usersObj) {
+        if (usersObj[user].online === true) {
+            verdaderos.push(usersObj[user].online)
+        }
+    }
+    return verdaderos.length
+    // Only change code above this line
+}
 
-// countOnline(obj);
+countOnline(obj);
 
 
 // SECTION ---------------------------------------------------------------------------------------------------------------//
@@ -280,10 +290,10 @@ const heroes = [
     },
 ];
 
-const getHeroeById = id => heroes.find(element => element.id === id)
+// const getHeroeById = id => heroes.find(element => element.id === id)
 
-console.log(getHeroeById(4));
+// console.log(getHeroeById(4));
 
-const getHeroeByOwner = owner => heroes.filter(element => element.owner === owner)
+// const getHeroeByOwner = owner => heroes.filter(element => element.owner === owner)
 
-console.log(getHeroeByOwner('DC'));
+// console.log(getHeroeByOwner('DC'));
