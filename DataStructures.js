@@ -297,3 +297,30 @@ const heroes = [
 // const getHeroeByOwner = owner => heroes.filter(element => element.owner === owner)
 
 // console.log(getHeroeByOwner('DC'));
+
+
+//Example of making the sum of salaries greater than 2500 with Array.prototype methods
+let arr = [
+  { id: 1, salary: 2000 },
+  { id: 2, salary: 3000 },
+  { id: 3, salary: 5000 },
+];
+let amountOfSalaries = arr
+  .filter((item) => item.salary >= 2500)
+  .map((item) => item.salary)
+  .reduce((acc, current) => acc + current);
+
+console.log(amountOfSalaries);
+
+//Example of making the sum of salaries greater than 2500 with loop
+
+let arr2 = [
+  { id: 1, salary: 2000 },
+  { id: 2, salary: 3000 },
+  { id: 3, salary: 5000 },
+];
+
+for (let j = 0; j < arr2.length; j++) {
+    let element = arr2[j];
+    element.salary + element.salary
+}
